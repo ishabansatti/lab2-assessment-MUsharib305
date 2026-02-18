@@ -2,39 +2,39 @@
 using namespace std;
 
 int getIntValue() {
-    // Declare a variable var_int of type int and set its value to 10.
     int var_int = 10;
     return var_int;
 }
 
 float getFloatValue() {
-    //Hello World
-    // Declare a variable var_float of type float and set its value to 10.75.
-    //return var_float;
     float var_float = 10.75;
     return var_float;
 }
 
 char getCharValue() {
-    // Declare a variable var_char of type character and set its value to A.
-    //return var_char;
-    var_char = 'A';
+    char var_char = 'A';
     return var_char;
-
 }
 
 int convertFloatToInt(float value) {
-    // convert value to int.
-    return value;
+    return static_cast<int>(value);
 }
 
-/*
-Convert Fahrenheit to Celsius and store your answer in a variable celsius.
-
-Formula:
-    Celsius = (Fahrenheit - 32) * 5 / 9
-*/
 float fahrenheitToCelsius(float fahrenheit) {
-    //return celsius;
+    float celsius = (fahrenheit - 32) * 5 / 9;
+    return celsius;
+}
 
+int main() {
+    cout << "Integer value: " << getIntValue() << endl;
+    cout << "Float value: " << getFloatValue() << endl;
+    cout << "Char value: " << getCharValue() << endl;
+
+    float myFloat = getFloatValue();
+    cout << "Converted float to int: " << convertFloatToInt(myFloat) << endl;
+
+    float tempF = 100;
+    cout << tempF << " Fahrenheit = " << fahrenheitToCelsius(tempF) << " Celsius" << endl;
+
+    return 0;
 }
